@@ -1,0 +1,4320 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Windows desktop test automation for pytest">
+      
+      
+      
+        <link rel="canonical" href="https://dolphinsoft.pl/docs/latest/reference/exceptions/">
+      
+      
+        <link rel="prev" href="../sap/">
+      
+      
+        <link rel="next" href="../pytest-plugin/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Exceptions - Dolphin Desktop</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#exceptions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Dolphin Desktop" class="md-header__button md-logo" aria-label="Dolphin Desktop" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dolphin Desktop
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Exceptions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/DolphinSoftEU/DolphinDesktop" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    DolphinSoftEU/DolphinDesktop
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../installation/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Installation
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../getting-started/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Getting Started
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../quickstart/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Quickstart
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../core-concepts/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Core Concepts
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../support-matrix/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Support Matrix
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../tutorials/" class="md-tabs__link">
+          
+  
+  
+  Tutorials
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../guides/" class="md-tabs__link">
+          
+  
+  
+  Guides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ci/" class="md-tabs__link">
+          
+  
+  
+  CI Setup
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../migration/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Migration Guide
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../architecture/" class="md-tabs__link">
+          
+  
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  API Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../cli/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  CLI Reference
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../faq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  FAQ
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Dolphin Desktop" class="md-nav__button md-logo" aria-label="Dolphin Desktop" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Dolphin Desktop
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/DolphinSoftEU/DolphinDesktop" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    DolphinSoftEU/DolphinDesktop
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quickstart
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../core-concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core Concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support-matrix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Support Matrix
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorials
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tutorials
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/first-test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    First Test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/headless-mode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Headless Mode
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/page-objects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Page Objects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/object-repository/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object Repository
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/fallback-selectors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fallback Selectors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/tracing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tracing and Debugging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/native/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Native Windows Apps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/qt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Qt
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/delphi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Delphi / VCL and Lazarus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/powerbuilder/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PowerBuilder
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/electron/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Electron
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/embedded-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Embedded Web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/cef-legacy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CEF and Legacy IE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/webview2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WebView2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/java/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Java Swing / AWT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/oracle-forms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oracle Forms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/mainframe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IBM Mainframe (3270 / 5250 / HLLAPI)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/office/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Office
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/sap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SAP GUI for Windows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/image-based/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Image-Based Fallback
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI Setup
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CI Setup
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ci/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ci/github-actions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GitHub Actions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ci/jenkins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jenkins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ci/teamcity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TeamCity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ci-example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Full Workflow Example
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migration Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backend Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-capabilities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backend Capabilities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/qt-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Qt Agent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/qt-agent-system-isolation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Qt Isolation Validation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desktop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Desktop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../application/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Application
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../window/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Window
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../locator/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Locator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../keyboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Keyboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mouse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mouse
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clipboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Clipboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dialogs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dialogs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../image/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ImageLocator / Screen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JavaAccessBridge
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../delphi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Delphi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oracle-forms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Oracle Forms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mainframe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mainframe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cdp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CDP / Electron
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../playwright-compat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Playwright Compatibility
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../office/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Office COM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SAP GUI for Windows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exceptions
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exceptions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dolphin_desktop._exceptions.DolphinError" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;DolphinError
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dolphin_desktop._exceptions.ElementNotFoundError" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;ElementNotFoundError
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dolphin_desktop._exceptions.AmbiguousMatchError" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;AmbiguousMatchError
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dolphin_desktop._exceptions.WaitTimeoutError" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;WaitTimeoutError
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dolphin_desktop._exceptions.ApplicationError" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;ApplicationError
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dolphin_desktop._exceptions.WindowNotFoundError" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;WindowNotFoundError
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dolphin_desktop._exceptions.AliasNotFoundError" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;AliasNotFoundError
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dolphin_desktop._exceptions.UnsupportedPatternError" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;UnsupportedPatternError
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dolphin_desktop._exceptions.UnsupportedCapabilityError" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;UnsupportedCapabilityError
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stack-specific-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stack-specific errors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dolphin_desktop._delphi.DelphiError" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;DelphiError
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dolphin_desktop._mainframe.MainframeError" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;MainframeError
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dolphin_desktop._oracle_forms.OracleFormsError" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;OracleFormsError
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dolphin_desktop._cdp.CDPStalePageError" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;CDPStalePageError
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dolphin_desktop._qt_inject.QtAgentInjectError" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;QtAgentInjectError
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dolphin_desktop._qt_inject.QtAgentRpcError" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;QtAgentRpcError
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dolphin_desktop._qt_inject.QtAgentTimeoutError" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;QtAgentTimeoutError
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#catching-exceptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Catching exceptions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-repository-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Object Repository validation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exception-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exception hierarchy
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pytest-plugin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    pytest Plugin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dolphin_desktop._exceptions.DolphinError" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;DolphinError
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dolphin_desktop._exceptions.ElementNotFoundError" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;ElementNotFoundError
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dolphin_desktop._exceptions.AmbiguousMatchError" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;AmbiguousMatchError
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dolphin_desktop._exceptions.WaitTimeoutError" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;WaitTimeoutError
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dolphin_desktop._exceptions.ApplicationError" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;ApplicationError
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dolphin_desktop._exceptions.WindowNotFoundError" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;WindowNotFoundError
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dolphin_desktop._exceptions.AliasNotFoundError" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;AliasNotFoundError
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dolphin_desktop._exceptions.UnsupportedPatternError" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;UnsupportedPatternError
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dolphin_desktop._exceptions.UnsupportedCapabilityError" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;UnsupportedCapabilityError
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stack-specific-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stack-specific errors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dolphin_desktop._delphi.DelphiError" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;DelphiError
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dolphin_desktop._mainframe.MainframeError" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;MainframeError
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dolphin_desktop._oracle_forms.OracleFormsError" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;OracleFormsError
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dolphin_desktop._cdp.CDPStalePageError" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;CDPStalePageError
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dolphin_desktop._qt_inject.QtAgentInjectError" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;QtAgentInjectError
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dolphin_desktop._qt_inject.QtAgentRpcError" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;QtAgentRpcError
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dolphin_desktop._qt_inject.QtAgentTimeoutError" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;QtAgentTimeoutError
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#catching-exceptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Catching exceptions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-repository-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Object Repository validation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exception-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exception hierarchy
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="exceptions">Exceptions<a class="headerlink" href="#exceptions" title="Permanent link">&para;</a></h1>
+<p>Except for the built-in <code>ValueError</code> raised by Object Repository validation,
+every exception the library raises on its own behalf derives from
+<code>DolphinError</code>, so one <code>except DolphinError</code> catches all other library
+exceptions.</p>
+<hr />
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="dolphin_desktop._exceptions.DolphinError" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">DolphinError</span>
+
+
+<a href="#dolphin_desktop._exceptions.DolphinError" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents first">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="Exception">Exception</span></code></p>
+
+
+
+        <p>Base exception for dolphin_desktop.</p>
+<p>Every dolphin-defined exception accepts an optional <code>hint=</code> kwarg
+that gets appended to the message as <code>hint: ...</code>. The intent is
+that users see a <em>suggested next step</em> right next to the failure —
+no need to look up the docstring or scroll through docs.</p>
+<p>Example::</p>
+<div class="highlight"><pre><span></span><code>raise ElementNotFoundError(
+    f&quot;button {name!r} not found&quot;,
+    hint=f&quot;try wait_for_selector({name!r}, state=&#39;visible&#39;)&quot;,
+)
+</code></pre></div>
+
+
+
+
+
+
+
+
+              <details class="mkdocstrings-source">
+                <summary>Source code in <code>src\dolphin_desktop\_exceptions.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-20">20</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-21">21</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-22">22</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-23">23</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-24">24</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-25">25</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-26">26</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-27">27</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-28">28</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-29">29</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-30">30</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-31">31</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-32">32</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-33">33</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-34">34</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-35">35</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-36">36</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-37">37</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-38">38</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-14" name="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-14"></a><span class="k">class</span><span class="w"> </span><span class="nc">DolphinError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+<a id="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-15" name="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-15"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Base exception for dolphin_desktop.</span>
+<a id="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-16" name="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-16"></a>
+<a id="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-17" name="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-17"></a><span class="sd">    Every dolphin-defined exception accepts an optional ``hint=`` kwarg</span>
+<a id="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-18" name="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-18"></a><span class="sd">    that gets appended to the message as ``  hint: ...``. The intent is</span>
+<a id="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-19" name="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-19"></a><span class="sd">    that users see a *suggested next step* right next to the failure —</span>
+<a id="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-20" name="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-20"></a><span class="sd">    no need to look up the docstring or scroll through docs.</span>
+<a id="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-21" name="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-21"></a>
+<a id="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-22" name="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-22"></a><span class="sd">    Example::</span>
+<a id="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-23" name="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-23"></a>
+<a id="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-24" name="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-24"></a><span class="sd">        raise ElementNotFoundError(</span>
+<a id="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-25" name="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-25"></a><span class="sd">            f&quot;button {name!r} not found&quot;,</span>
+<a id="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-26" name="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-26"></a><span class="sd">            hint=f&quot;try wait_for_selector({name!r}, state=&#39;visible&#39;)&quot;,</span>
+<a id="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-27" name="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-27"></a><span class="sd">        )</span>
+<a id="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-28" name="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-28"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-29" name="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-29"></a>
+<a id="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-30" name="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-30"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">hint</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-31" name="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-31"></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+<a id="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-32" name="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-32"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">hint</span> <span class="o">=</span> <span class="n">hint</span>
+<a id="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-33" name="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-33"></a>
+<a id="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-34" name="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-34"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<a id="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-35" name="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-35"></a>        <span class="n">base</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()</span>
+<a id="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-36" name="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-36"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">hint</span><span class="p">:</span>
+<a id="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-37" name="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-37"></a>            <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">base</span><span class="si">}</span><span class="se">\n</span><span class="s2">  hint: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">hint</span><span class="si">}</span><span class="s2">&quot;</span>
+<a id="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-38" name="dolphin_desktop._exceptions.DolphinError--source--__codelineno-0-38"></a>        <span class="k">return</span> <span class="n">base</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="dolphin_desktop._exceptions.ElementNotFoundError" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">ElementNotFoundError</span>
+
+
+<a href="#dolphin_desktop._exceptions.ElementNotFoundError" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents first">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="            DolphinError (dolphin_desktop._exceptions.DolphinError)" href="#dolphin_desktop._exceptions.DolphinError">DolphinError</a></code></p>
+
+
+
+        <p>Raised when an element cannot be found within the timeout.</p>
+<p>The message should include the failing selector / role / name.</p>
+
+
+
+
+
+
+
+
+              <details class="mkdocstrings-source">
+                <summary>Source code in <code>src\dolphin_desktop\_exceptions.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#dolphin_desktop._exceptions.ElementNotFoundError--source--__codelineno-0-41">41</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.ElementNotFoundError--source--__codelineno-0-42">42</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.ElementNotFoundError--source--__codelineno-0-43">43</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.ElementNotFoundError--source--__codelineno-0-44">44</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.ElementNotFoundError--source--__codelineno-0-45">45</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="dolphin_desktop._exceptions.ElementNotFoundError--source--__codelineno-0-41" name="dolphin_desktop._exceptions.ElementNotFoundError--source--__codelineno-0-41"></a><span class="k">class</span><span class="w"> </span><span class="nc">ElementNotFoundError</span><span class="p">(</span><span class="n">DolphinError</span><span class="p">):</span>
+<a id="dolphin_desktop._exceptions.ElementNotFoundError--source--__codelineno-0-42" name="dolphin_desktop._exceptions.ElementNotFoundError--source--__codelineno-0-42"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Raised when an element cannot be found within the timeout.</span>
+<a id="dolphin_desktop._exceptions.ElementNotFoundError--source--__codelineno-0-43" name="dolphin_desktop._exceptions.ElementNotFoundError--source--__codelineno-0-43"></a>
+<a id="dolphin_desktop._exceptions.ElementNotFoundError--source--__codelineno-0-44" name="dolphin_desktop._exceptions.ElementNotFoundError--source--__codelineno-0-44"></a><span class="sd">    The message should include the failing selector / role / name.</span>
+<a id="dolphin_desktop._exceptions.ElementNotFoundError--source--__codelineno-0-45" name="dolphin_desktop._exceptions.ElementNotFoundError--source--__codelineno-0-45"></a><span class="sd">    &quot;&quot;&quot;</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="dolphin_desktop._exceptions.AmbiguousMatchError" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">AmbiguousMatchError</span>
+
+
+<a href="#dolphin_desktop._exceptions.AmbiguousMatchError" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents first">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="            DolphinError (dolphin_desktop._exceptions.DolphinError)" href="#dolphin_desktop._exceptions.DolphinError">DolphinError</a></code></p>
+
+
+
+        <p>Raised when locator criteria match more than one element.</p>
+<p>Distinct from :class:<code>ElementNotFoundError</code> on purpose: the elements
+are there — the criteria are under-specified. Narrow them (add
+<code>control_type</code>, <code>title</code>…) or pick a match with <code>found_index=N</code>.</p>
+
+
+
+
+
+
+
+
+              <details class="mkdocstrings-source">
+                <summary>Source code in <code>src\dolphin_desktop\_exceptions.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#dolphin_desktop._exceptions.AmbiguousMatchError--source--__codelineno-0-48">48</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.AmbiguousMatchError--source--__codelineno-0-49">49</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.AmbiguousMatchError--source--__codelineno-0-50">50</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.AmbiguousMatchError--source--__codelineno-0-51">51</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.AmbiguousMatchError--source--__codelineno-0-52">52</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.AmbiguousMatchError--source--__codelineno-0-53">53</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.AmbiguousMatchError--source--__codelineno-0-54">54</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="dolphin_desktop._exceptions.AmbiguousMatchError--source--__codelineno-0-48" name="dolphin_desktop._exceptions.AmbiguousMatchError--source--__codelineno-0-48"></a><span class="k">class</span><span class="w"> </span><span class="nc">AmbiguousMatchError</span><span class="p">(</span><span class="n">DolphinError</span><span class="p">):</span>
+<a id="dolphin_desktop._exceptions.AmbiguousMatchError--source--__codelineno-0-49" name="dolphin_desktop._exceptions.AmbiguousMatchError--source--__codelineno-0-49"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Raised when locator criteria match more than one element.</span>
+<a id="dolphin_desktop._exceptions.AmbiguousMatchError--source--__codelineno-0-50" name="dolphin_desktop._exceptions.AmbiguousMatchError--source--__codelineno-0-50"></a>
+<a id="dolphin_desktop._exceptions.AmbiguousMatchError--source--__codelineno-0-51" name="dolphin_desktop._exceptions.AmbiguousMatchError--source--__codelineno-0-51"></a><span class="sd">    Distinct from :class:`ElementNotFoundError` on purpose: the elements</span>
+<a id="dolphin_desktop._exceptions.AmbiguousMatchError--source--__codelineno-0-52" name="dolphin_desktop._exceptions.AmbiguousMatchError--source--__codelineno-0-52"></a><span class="sd">    are there — the criteria are under-specified. Narrow them (add</span>
+<a id="dolphin_desktop._exceptions.AmbiguousMatchError--source--__codelineno-0-53" name="dolphin_desktop._exceptions.AmbiguousMatchError--source--__codelineno-0-53"></a><span class="sd">    ``control_type``, ``title``…) or pick a match with ``found_index=N``.</span>
+<a id="dolphin_desktop._exceptions.AmbiguousMatchError--source--__codelineno-0-54" name="dolphin_desktop._exceptions.AmbiguousMatchError--source--__codelineno-0-54"></a><span class="sd">    &quot;&quot;&quot;</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="dolphin_desktop._exceptions.WaitTimeoutError" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">WaitTimeoutError</span>
+
+
+<a href="#dolphin_desktop._exceptions.WaitTimeoutError" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents first">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="            DolphinError (dolphin_desktop._exceptions.DolphinError)" href="#dolphin_desktop._exceptions.DolphinError">DolphinError</a></code></p>
+
+
+
+        <p>Raised when a wait condition is not met within the allowed time.</p>
+<p>Prefer the <code>hint=</code> kwarg to point at the wait primitive that would
+have made the flake avoidable (<code>wait_for</code>, <code>wait_for_status</code>,
+<code>wait_for_url</code>…).</p>
+
+
+
+
+
+
+
+
+              <details class="mkdocstrings-source">
+                <summary>Source code in <code>src\dolphin_desktop\_exceptions.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#dolphin_desktop._exceptions.WaitTimeoutError--source--__codelineno-0-57">57</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.WaitTimeoutError--source--__codelineno-0-58">58</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.WaitTimeoutError--source--__codelineno-0-59">59</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.WaitTimeoutError--source--__codelineno-0-60">60</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.WaitTimeoutError--source--__codelineno-0-61">61</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.WaitTimeoutError--source--__codelineno-0-62">62</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.WaitTimeoutError--source--__codelineno-0-63">63</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="dolphin_desktop._exceptions.WaitTimeoutError--source--__codelineno-0-57" name="dolphin_desktop._exceptions.WaitTimeoutError--source--__codelineno-0-57"></a><span class="k">class</span><span class="w"> </span><span class="nc">WaitTimeoutError</span><span class="p">(</span><span class="n">DolphinError</span><span class="p">):</span>
+<a id="dolphin_desktop._exceptions.WaitTimeoutError--source--__codelineno-0-58" name="dolphin_desktop._exceptions.WaitTimeoutError--source--__codelineno-0-58"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Raised when a wait condition is not met within the allowed time.</span>
+<a id="dolphin_desktop._exceptions.WaitTimeoutError--source--__codelineno-0-59" name="dolphin_desktop._exceptions.WaitTimeoutError--source--__codelineno-0-59"></a>
+<a id="dolphin_desktop._exceptions.WaitTimeoutError--source--__codelineno-0-60" name="dolphin_desktop._exceptions.WaitTimeoutError--source--__codelineno-0-60"></a><span class="sd">    Prefer the ``hint=`` kwarg to point at the wait primitive that would</span>
+<a id="dolphin_desktop._exceptions.WaitTimeoutError--source--__codelineno-0-61" name="dolphin_desktop._exceptions.WaitTimeoutError--source--__codelineno-0-61"></a><span class="sd">    have made the flake avoidable (``wait_for``, ``wait_for_status``,</span>
+<a id="dolphin_desktop._exceptions.WaitTimeoutError--source--__codelineno-0-62" name="dolphin_desktop._exceptions.WaitTimeoutError--source--__codelineno-0-62"></a><span class="sd">    ``wait_for_url``…).</span>
+<a id="dolphin_desktop._exceptions.WaitTimeoutError--source--__codelineno-0-63" name="dolphin_desktop._exceptions.WaitTimeoutError--source--__codelineno-0-63"></a><span class="sd">    &quot;&quot;&quot;</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="dolphin_desktop._exceptions.ApplicationError" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">ApplicationError</span>
+
+
+<a href="#dolphin_desktop._exceptions.ApplicationError" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents first">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="            DolphinError (dolphin_desktop._exceptions.DolphinError)" href="#dolphin_desktop._exceptions.DolphinError">DolphinError</a></code></p>
+
+
+
+        <p>Raised when application launch or connection fails.</p>
+
+
+
+
+
+
+
+
+              <details class="mkdocstrings-source">
+                <summary>Source code in <code>src\dolphin_desktop\_exceptions.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#dolphin_desktop._exceptions.ApplicationError--source--__codelineno-0-66">66</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.ApplicationError--source--__codelineno-0-67">67</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="dolphin_desktop._exceptions.ApplicationError--source--__codelineno-0-66" name="dolphin_desktop._exceptions.ApplicationError--source--__codelineno-0-66"></a><span class="k">class</span><span class="w"> </span><span class="nc">ApplicationError</span><span class="p">(</span><span class="n">DolphinError</span><span class="p">):</span>
+<a id="dolphin_desktop._exceptions.ApplicationError--source--__codelineno-0-67" name="dolphin_desktop._exceptions.ApplicationError--source--__codelineno-0-67"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Raised when application launch or connection fails.&quot;&quot;&quot;</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="dolphin_desktop._exceptions.WindowNotFoundError" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">WindowNotFoundError</span>
+
+
+<a href="#dolphin_desktop._exceptions.WindowNotFoundError" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents first">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="            DolphinError (dolphin_desktop._exceptions.DolphinError)" href="#dolphin_desktop._exceptions.DolphinError">DolphinError</a></code></p>
+
+
+
+        <p>Raised when a window cannot be found.</p>
+
+
+
+
+
+
+
+
+              <details class="mkdocstrings-source">
+                <summary>Source code in <code>src\dolphin_desktop\_exceptions.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#dolphin_desktop._exceptions.WindowNotFoundError--source--__codelineno-0-70">70</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.WindowNotFoundError--source--__codelineno-0-71">71</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="dolphin_desktop._exceptions.WindowNotFoundError--source--__codelineno-0-70" name="dolphin_desktop._exceptions.WindowNotFoundError--source--__codelineno-0-70"></a><span class="k">class</span><span class="w"> </span><span class="nc">WindowNotFoundError</span><span class="p">(</span><span class="n">DolphinError</span><span class="p">):</span>
+<a id="dolphin_desktop._exceptions.WindowNotFoundError--source--__codelineno-0-71" name="dolphin_desktop._exceptions.WindowNotFoundError--source--__codelineno-0-71"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Raised when a window cannot be found.&quot;&quot;&quot;</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="dolphin_desktop._exceptions.AliasNotFoundError" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">AliasNotFoundError</span>
+
+
+<a href="#dolphin_desktop._exceptions.AliasNotFoundError" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents first">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="            DolphinError (dolphin_desktop._exceptions.DolphinError)" href="#dolphin_desktop._exceptions.DolphinError">DolphinError</a></code></p>
+
+
+
+        <p>Raised when an alias is not found in the Object Repository.</p>
+
+
+
+
+
+
+
+
+              <details class="mkdocstrings-source">
+                <summary>Source code in <code>src\dolphin_desktop\_exceptions.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#dolphin_desktop._exceptions.AliasNotFoundError--source--__codelineno-0-74">74</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.AliasNotFoundError--source--__codelineno-0-75">75</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="dolphin_desktop._exceptions.AliasNotFoundError--source--__codelineno-0-74" name="dolphin_desktop._exceptions.AliasNotFoundError--source--__codelineno-0-74"></a><span class="k">class</span><span class="w"> </span><span class="nc">AliasNotFoundError</span><span class="p">(</span><span class="n">DolphinError</span><span class="p">):</span>
+<a id="dolphin_desktop._exceptions.AliasNotFoundError--source--__codelineno-0-75" name="dolphin_desktop._exceptions.AliasNotFoundError--source--__codelineno-0-75"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Raised when an alias is not found in the Object Repository.&quot;&quot;&quot;</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="dolphin_desktop._exceptions.UnsupportedPatternError" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">UnsupportedPatternError</span>
+
+
+<a href="#dolphin_desktop._exceptions.UnsupportedPatternError" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents first">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="            DolphinError (dolphin_desktop._exceptions.DolphinError)" href="#dolphin_desktop._exceptions.DolphinError">DolphinError</a></code></p>
+
+
+
+        <p>Raised when a programmatic UIA / JAB action is called on an element
+that does not implement the required pattern.</p>
+<p>Signals to the caller that they must either (a) target a different
+element that implements the pattern, (b) drop back to the physical
+action (<code>click</code> / <code>type_text</code>), or (c) verify their selector
+matched the intended widget. Emitted by :meth:<code>Locator.invoke</code>,
+:meth:<code>Locator.toggle</code>, :meth:<code>Locator.expand</code>,
+:meth:<code>Locator.collapse</code>, :meth:<code>Locator.select</code>,
+:meth:<code>Locator.set_value</code> and their :class:<code>JABLocator</code>
+counterparts.</p>
+
+
+
+
+
+
+
+
+              <details class="mkdocstrings-source">
+                <summary>Source code in <code>src\dolphin_desktop\_exceptions.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#dolphin_desktop._exceptions.UnsupportedPatternError--source--__codelineno-0-99"> 99</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.UnsupportedPatternError--source--__codelineno-0-100">100</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.UnsupportedPatternError--source--__codelineno-0-101">101</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.UnsupportedPatternError--source--__codelineno-0-102">102</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.UnsupportedPatternError--source--__codelineno-0-103">103</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.UnsupportedPatternError--source--__codelineno-0-104">104</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.UnsupportedPatternError--source--__codelineno-0-105">105</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.UnsupportedPatternError--source--__codelineno-0-106">106</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.UnsupportedPatternError--source--__codelineno-0-107">107</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.UnsupportedPatternError--source--__codelineno-0-108">108</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.UnsupportedPatternError--source--__codelineno-0-109">109</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.UnsupportedPatternError--source--__codelineno-0-110">110</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.UnsupportedPatternError--source--__codelineno-0-111">111</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="dolphin_desktop._exceptions.UnsupportedPatternError--source--__codelineno-0-99" name="dolphin_desktop._exceptions.UnsupportedPatternError--source--__codelineno-0-99"></a><span class="k">class</span><span class="w"> </span><span class="nc">UnsupportedPatternError</span><span class="p">(</span><span class="n">DolphinError</span><span class="p">):</span>
+<a id="dolphin_desktop._exceptions.UnsupportedPatternError--source--__codelineno-0-100" name="dolphin_desktop._exceptions.UnsupportedPatternError--source--__codelineno-0-100"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Raised when a programmatic UIA / JAB action is called on an element</span>
+<a id="dolphin_desktop._exceptions.UnsupportedPatternError--source--__codelineno-0-101" name="dolphin_desktop._exceptions.UnsupportedPatternError--source--__codelineno-0-101"></a><span class="sd">    that does not implement the required pattern.</span>
+<a id="dolphin_desktop._exceptions.UnsupportedPatternError--source--__codelineno-0-102" name="dolphin_desktop._exceptions.UnsupportedPatternError--source--__codelineno-0-102"></a>
+<a id="dolphin_desktop._exceptions.UnsupportedPatternError--source--__codelineno-0-103" name="dolphin_desktop._exceptions.UnsupportedPatternError--source--__codelineno-0-103"></a><span class="sd">    Signals to the caller that they must either (a) target a different</span>
+<a id="dolphin_desktop._exceptions.UnsupportedPatternError--source--__codelineno-0-104" name="dolphin_desktop._exceptions.UnsupportedPatternError--source--__codelineno-0-104"></a><span class="sd">    element that implements the pattern, (b) drop back to the physical</span>
+<a id="dolphin_desktop._exceptions.UnsupportedPatternError--source--__codelineno-0-105" name="dolphin_desktop._exceptions.UnsupportedPatternError--source--__codelineno-0-105"></a><span class="sd">    action (``click`` / ``type_text``), or (c) verify their selector</span>
+<a id="dolphin_desktop._exceptions.UnsupportedPatternError--source--__codelineno-0-106" name="dolphin_desktop._exceptions.UnsupportedPatternError--source--__codelineno-0-106"></a><span class="sd">    matched the intended widget. Emitted by :meth:`Locator.invoke`,</span>
+<a id="dolphin_desktop._exceptions.UnsupportedPatternError--source--__codelineno-0-107" name="dolphin_desktop._exceptions.UnsupportedPatternError--source--__codelineno-0-107"></a><span class="sd">    :meth:`Locator.toggle`, :meth:`Locator.expand`,</span>
+<a id="dolphin_desktop._exceptions.UnsupportedPatternError--source--__codelineno-0-108" name="dolphin_desktop._exceptions.UnsupportedPatternError--source--__codelineno-0-108"></a><span class="sd">    :meth:`Locator.collapse`, :meth:`Locator.select`,</span>
+<a id="dolphin_desktop._exceptions.UnsupportedPatternError--source--__codelineno-0-109" name="dolphin_desktop._exceptions.UnsupportedPatternError--source--__codelineno-0-109"></a><span class="sd">    :meth:`Locator.set_value` and their :class:`JABLocator`</span>
+<a id="dolphin_desktop._exceptions.UnsupportedPatternError--source--__codelineno-0-110" name="dolphin_desktop._exceptions.UnsupportedPatternError--source--__codelineno-0-110"></a><span class="sd">    counterparts.</span>
+<a id="dolphin_desktop._exceptions.UnsupportedPatternError--source--__codelineno-0-111" name="dolphin_desktop._exceptions.UnsupportedPatternError--source--__codelineno-0-111"></a><span class="sd">    &quot;&quot;&quot;</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="dolphin_desktop._exceptions.UnsupportedCapabilityError" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">UnsupportedCapabilityError</span>
+
+
+<a href="#dolphin_desktop._exceptions.UnsupportedCapabilityError" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents first">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="            DolphinError (dolphin_desktop._exceptions.DolphinError)" href="#dolphin_desktop._exceptions.DolphinError">DolphinError</a></code></p>
+
+
+
+        <p>Raised when an operation is requested against a backend that does
+NOT declare the required :class:<code>~dolphin_desktop.Capability</code>.</p>
+<p>Distinct from :class:<code>UnsupportedPatternError</code>:</p>
+<ul>
+<li><code>UnsupportedCapabilityError</code> fires when the <strong>backend as a
+  whole</strong> does not support the operation — e.g. calling
+  <code>.invoke()</code> in a test that resolved a pure <code>ImageBackend</code>
+  locator (image matching has no accessibility patterns at all).</li>
+<li><code>UnsupportedPatternError</code> fires when the <strong>specific element</strong>
+  does not implement the required pattern — the backend supports
+  the operation in principle, but this widget does not (a JLabel
+  is not toggleable even though the JAB backend supports toggle
+  in general).</li>
+</ul>
+<p>Emitted by :meth:<code>~dolphin_desktop._backend.Backend.require_capability</code>
+and by every operation that gates on a capability check.</p>
+
+
+
+
+
+
+
+
+              <details class="mkdocstrings-source">
+                <summary>Source code in <code>src\dolphin_desktop\_exceptions.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-78">78</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-79">79</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-80">80</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-81">81</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-82">82</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-83">83</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-84">84</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-85">85</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-86">86</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-87">87</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-88">88</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-89">89</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-90">90</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-91">91</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-92">92</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-93">93</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-94">94</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-95">95</a></span>
+<span class="normal"><a href="#dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-96">96</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-78" name="dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-78"></a><span class="k">class</span><span class="w"> </span><span class="nc">UnsupportedCapabilityError</span><span class="p">(</span><span class="n">DolphinError</span><span class="p">):</span>
+<a id="dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-79" name="dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-79"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Raised when an operation is requested against a backend that does</span>
+<a id="dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-80" name="dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-80"></a><span class="sd">    NOT declare the required :class:`~dolphin_desktop.Capability`.</span>
+<a id="dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-81" name="dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-81"></a>
+<a id="dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-82" name="dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-82"></a><span class="sd">    Distinct from :class:`UnsupportedPatternError`:</span>
+<a id="dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-83" name="dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-83"></a>
+<a id="dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-84" name="dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-84"></a><span class="sd">    * ``UnsupportedCapabilityError`` fires when the **backend as a</span>
+<a id="dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-85" name="dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-85"></a><span class="sd">      whole** does not support the operation — e.g. calling</span>
+<a id="dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-86" name="dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-86"></a><span class="sd">      ``.invoke()`` in a test that resolved a pure ``ImageBackend``</span>
+<a id="dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-87" name="dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-87"></a><span class="sd">      locator (image matching has no accessibility patterns at all).</span>
+<a id="dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-88" name="dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-88"></a><span class="sd">    * ``UnsupportedPatternError`` fires when the **specific element**</span>
+<a id="dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-89" name="dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-89"></a><span class="sd">      does not implement the required pattern — the backend supports</span>
+<a id="dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-90" name="dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-90"></a><span class="sd">      the operation in principle, but this widget does not (a JLabel</span>
+<a id="dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-91" name="dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-91"></a><span class="sd">      is not toggleable even though the JAB backend supports toggle</span>
+<a id="dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-92" name="dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-92"></a><span class="sd">      in general).</span>
+<a id="dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-93" name="dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-93"></a>
+<a id="dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-94" name="dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-94"></a><span class="sd">    Emitted by :meth:`~dolphin_desktop._backend.Backend.require_capability`</span>
+<a id="dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-95" name="dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-95"></a><span class="sd">    and by every operation that gates on a capability check.</span>
+<a id="dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-96" name="dolphin_desktop._exceptions.UnsupportedCapabilityError--source--__codelineno-0-96"></a><span class="sd">    &quot;&quot;&quot;</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div><h2 id="stack-specific-errors">Stack-specific errors<a class="headerlink" href="#stack-specific-errors" title="Permanent link">&para;</a></h2>
+<p>These live next to their adapter but share the same base, so
+<code>except DolphinError</code> catches them like everything else.</p>
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="dolphin_desktop._delphi.DelphiError" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">DelphiError</span>
+
+
+<a href="#dolphin_desktop._delphi.DelphiError" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents first">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="            DolphinError (dolphin_desktop._exceptions.DolphinError)" href="#dolphin_desktop._exceptions.DolphinError">DolphinError</a></code></p>
+
+
+
+        <p>Raised when a Delphi / VCL-specific operation fails.</p>
+
+
+
+
+
+
+
+
+              <details class="mkdocstrings-source">
+                <summary>Source code in <code>src\dolphin_desktop\_delphi.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#dolphin_desktop._delphi.DelphiError--source--__codelineno-0-69">69</a></span>
+<span class="normal"><a href="#dolphin_desktop._delphi.DelphiError--source--__codelineno-0-70">70</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="dolphin_desktop._delphi.DelphiError--source--__codelineno-0-69" name="dolphin_desktop._delphi.DelphiError--source--__codelineno-0-69"></a><span class="k">class</span><span class="w"> </span><span class="nc">DelphiError</span><span class="p">(</span><span class="n">DolphinError</span><span class="p">):</span>
+<a id="dolphin_desktop._delphi.DelphiError--source--__codelineno-0-70" name="dolphin_desktop._delphi.DelphiError--source--__codelineno-0-70"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Raised when a Delphi / VCL-specific operation fails.&quot;&quot;&quot;</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="dolphin_desktop._mainframe.MainframeError" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">MainframeError</span>
+
+
+<a href="#dolphin_desktop._mainframe.MainframeError" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents first">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="            DolphinError (dolphin_desktop._exceptions.DolphinError)" href="#dolphin_desktop._exceptions.DolphinError">DolphinError</a></code></p>
+
+
+
+        <p>Raised when a mainframe terminal operation fails.</p>
+
+
+
+
+
+
+
+
+              <details class="mkdocstrings-source">
+                <summary>Source code in <code>src\dolphin_desktop\_mainframe.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#dolphin_desktop._mainframe.MainframeError--source--__codelineno-0-69">69</a></span>
+<span class="normal"><a href="#dolphin_desktop._mainframe.MainframeError--source--__codelineno-0-70">70</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="dolphin_desktop._mainframe.MainframeError--source--__codelineno-0-69" name="dolphin_desktop._mainframe.MainframeError--source--__codelineno-0-69"></a><span class="k">class</span><span class="w"> </span><span class="nc">MainframeError</span><span class="p">(</span><span class="n">DolphinError</span><span class="p">):</span>
+<a id="dolphin_desktop._mainframe.MainframeError--source--__codelineno-0-70" name="dolphin_desktop._mainframe.MainframeError--source--__codelineno-0-70"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Raised when a mainframe terminal operation fails.&quot;&quot;&quot;</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="dolphin_desktop._oracle_forms.OracleFormsError" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">OracleFormsError</span>
+
+
+<a href="#dolphin_desktop._oracle_forms.OracleFormsError" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents first">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="            DolphinError (dolphin_desktop._exceptions.DolphinError)" href="#dolphin_desktop._exceptions.DolphinError">DolphinError</a></code></p>
+
+
+
+        <p>Raised when an Oracle-Forms-specific operation fails.</p>
+
+
+
+
+
+
+
+
+              <details class="mkdocstrings-source">
+                <summary>Source code in <code>src\dolphin_desktop\_oracle_forms.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#dolphin_desktop._oracle_forms.OracleFormsError--source--__codelineno-0-66">66</a></span>
+<span class="normal"><a href="#dolphin_desktop._oracle_forms.OracleFormsError--source--__codelineno-0-67">67</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="dolphin_desktop._oracle_forms.OracleFormsError--source--__codelineno-0-66" name="dolphin_desktop._oracle_forms.OracleFormsError--source--__codelineno-0-66"></a><span class="k">class</span><span class="w"> </span><span class="nc">OracleFormsError</span><span class="p">(</span><span class="n">DolphinError</span><span class="p">):</span>
+<a id="dolphin_desktop._oracle_forms.OracleFormsError--source--__codelineno-0-67" name="dolphin_desktop._oracle_forms.OracleFormsError--source--__codelineno-0-67"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Raised when an Oracle-Forms-specific operation fails.&quot;&quot;&quot;</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="dolphin_desktop._cdp.CDPStalePageError" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">CDPStalePageError</span>
+
+
+<a href="#dolphin_desktop._cdp.CDPStalePageError" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents first">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="            DolphinError (dolphin_desktop._exceptions.DolphinError)" href="#dolphin_desktop._exceptions.DolphinError">DolphinError</a></code></p>
+
+
+
+        <p>Raised when the explicitly selected page has closed.</p>
+<p>Only an explicitly selected page (:meth:<code>CDPSession.switch_to_page</code>,
+:meth:<code>CDPSession.expect_popup</code>) raises this. Substituting another window
+would run the action against a different renderer, so the session refuses
+to guess.</p>
+
+
+
+
+
+
+
+
+              <details class="mkdocstrings-source">
+                <summary>Source code in <code>src\dolphin_desktop\_cdp.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#dolphin_desktop._cdp.CDPStalePageError--source--__codelineno-0-124">124</a></span>
+<span class="normal"><a href="#dolphin_desktop._cdp.CDPStalePageError--source--__codelineno-0-125">125</a></span>
+<span class="normal"><a href="#dolphin_desktop._cdp.CDPStalePageError--source--__codelineno-0-126">126</a></span>
+<span class="normal"><a href="#dolphin_desktop._cdp.CDPStalePageError--source--__codelineno-0-127">127</a></span>
+<span class="normal"><a href="#dolphin_desktop._cdp.CDPStalePageError--source--__codelineno-0-128">128</a></span>
+<span class="normal"><a href="#dolphin_desktop._cdp.CDPStalePageError--source--__codelineno-0-129">129</a></span>
+<span class="normal"><a href="#dolphin_desktop._cdp.CDPStalePageError--source--__codelineno-0-130">130</a></span>
+<span class="normal"><a href="#dolphin_desktop._cdp.CDPStalePageError--source--__codelineno-0-131">131</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="dolphin_desktop._cdp.CDPStalePageError--source--__codelineno-0-124" name="dolphin_desktop._cdp.CDPStalePageError--source--__codelineno-0-124"></a><span class="k">class</span><span class="w"> </span><span class="nc">CDPStalePageError</span><span class="p">(</span><span class="n">DolphinError</span><span class="p">):</span>
+<a id="dolphin_desktop._cdp.CDPStalePageError--source--__codelineno-0-125" name="dolphin_desktop._cdp.CDPStalePageError--source--__codelineno-0-125"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Raised when the explicitly selected page has closed.</span>
+<a id="dolphin_desktop._cdp.CDPStalePageError--source--__codelineno-0-126" name="dolphin_desktop._cdp.CDPStalePageError--source--__codelineno-0-126"></a>
+<a id="dolphin_desktop._cdp.CDPStalePageError--source--__codelineno-0-127" name="dolphin_desktop._cdp.CDPStalePageError--source--__codelineno-0-127"></a><span class="sd">    Only an explicitly selected page (:meth:`CDPSession.switch_to_page`,</span>
+<a id="dolphin_desktop._cdp.CDPStalePageError--source--__codelineno-0-128" name="dolphin_desktop._cdp.CDPStalePageError--source--__codelineno-0-128"></a><span class="sd">    :meth:`CDPSession.expect_popup`) raises this. Substituting another window</span>
+<a id="dolphin_desktop._cdp.CDPStalePageError--source--__codelineno-0-129" name="dolphin_desktop._cdp.CDPStalePageError--source--__codelineno-0-129"></a><span class="sd">    would run the action against a different renderer, so the session refuses</span>
+<a id="dolphin_desktop._cdp.CDPStalePageError--source--__codelineno-0-130" name="dolphin_desktop._cdp.CDPStalePageError--source--__codelineno-0-130"></a><span class="sd">    to guess.</span>
+<a id="dolphin_desktop._cdp.CDPStalePageError--source--__codelineno-0-131" name="dolphin_desktop._cdp.CDPStalePageError--source--__codelineno-0-131"></a><span class="sd">    &quot;&quot;&quot;</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="dolphin_desktop._qt_inject.QtAgentInjectError" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">QtAgentInjectError</span>
+
+
+<a href="#dolphin_desktop._qt_inject.QtAgentInjectError" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents first">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="            DolphinError (dolphin_desktop._exceptions.DolphinError)" href="#dolphin_desktop._exceptions.DolphinError">DolphinError</a></code>, <code><span title="RuntimeError">RuntimeError</span></code></p>
+
+
+
+        <p>Raised when DLL injection or the agent's start function fails.</p>
+
+
+
+
+
+
+
+
+              <details class="mkdocstrings-source">
+                <summary>Source code in <code>src\dolphin_desktop\_qt_inject.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#dolphin_desktop._qt_inject.QtAgentInjectError--source--__codelineno-0-305">305</a></span>
+<span class="normal"><a href="#dolphin_desktop._qt_inject.QtAgentInjectError--source--__codelineno-0-306">306</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="dolphin_desktop._qt_inject.QtAgentInjectError--source--__codelineno-0-305" name="dolphin_desktop._qt_inject.QtAgentInjectError--source--__codelineno-0-305"></a><span class="k">class</span><span class="w"> </span><span class="nc">QtAgentInjectError</span><span class="p">(</span><span class="n">DolphinError</span><span class="p">,</span> <span class="ne">RuntimeError</span><span class="p">):</span>
+<a id="dolphin_desktop._qt_inject.QtAgentInjectError--source--__codelineno-0-306" name="dolphin_desktop._qt_inject.QtAgentInjectError--source--__codelineno-0-306"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Raised when DLL injection or the agent&#39;s start function fails.&quot;&quot;&quot;</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="dolphin_desktop._qt_inject.QtAgentRpcError" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">QtAgentRpcError</span>
+
+
+<a href="#dolphin_desktop._qt_inject.QtAgentRpcError" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents first">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="            DolphinError (dolphin_desktop._exceptions.DolphinError)" href="#dolphin_desktop._exceptions.DolphinError">DolphinError</a></code>, <code><span title="RuntimeError">RuntimeError</span></code></p>
+
+
+
+        <p>Raised when the agent returns <code>ok=False</code> for a request.</p>
+
+
+
+
+
+
+
+
+              <details class="mkdocstrings-source">
+                <summary>Source code in <code>src\dolphin_desktop\_qt_inject.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#dolphin_desktop._qt_inject.QtAgentRpcError--source--__codelineno-0-309">309</a></span>
+<span class="normal"><a href="#dolphin_desktop._qt_inject.QtAgentRpcError--source--__codelineno-0-310">310</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="dolphin_desktop._qt_inject.QtAgentRpcError--source--__codelineno-0-309" name="dolphin_desktop._qt_inject.QtAgentRpcError--source--__codelineno-0-309"></a><span class="k">class</span><span class="w"> </span><span class="nc">QtAgentRpcError</span><span class="p">(</span><span class="n">DolphinError</span><span class="p">,</span> <span class="ne">RuntimeError</span><span class="p">):</span>
+<a id="dolphin_desktop._qt_inject.QtAgentRpcError--source--__codelineno-0-310" name="dolphin_desktop._qt_inject.QtAgentRpcError--source--__codelineno-0-310"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Raised when the agent returns ``ok=False`` for a request.&quot;&quot;&quot;</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="dolphin_desktop._qt_inject.QtAgentTimeoutError" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">QtAgentTimeoutError</span>
+
+
+<a href="#dolphin_desktop._qt_inject.QtAgentTimeoutError" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+    <div class="doc doc-contents first">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="            QtAgentRpcError (dolphin_desktop._qt_inject.QtAgentRpcError)" href="#dolphin_desktop._qt_inject.QtAgentRpcError">QtAgentRpcError</a></code></p>
+
+
+
+        <p>Raised when a single request outlives <code>rpc_timeout</code>.</p>
+<p>Recoverable, unlike its base: the connection stays usable and the late
+reply to the abandoned request is discarded when it arrives. A Qt event
+loop parked behind a native modal dialog produces this and nothing else.</p>
+
+
+
+
+
+
+
+
+              <details class="mkdocstrings-source">
+                <summary>Source code in <code>src\dolphin_desktop\_qt_inject.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#dolphin_desktop._qt_inject.QtAgentTimeoutError--source--__codelineno-0-313">313</a></span>
+<span class="normal"><a href="#dolphin_desktop._qt_inject.QtAgentTimeoutError--source--__codelineno-0-314">314</a></span>
+<span class="normal"><a href="#dolphin_desktop._qt_inject.QtAgentTimeoutError--source--__codelineno-0-315">315</a></span>
+<span class="normal"><a href="#dolphin_desktop._qt_inject.QtAgentTimeoutError--source--__codelineno-0-316">316</a></span>
+<span class="normal"><a href="#dolphin_desktop._qt_inject.QtAgentTimeoutError--source--__codelineno-0-317">317</a></span>
+<span class="normal"><a href="#dolphin_desktop._qt_inject.QtAgentTimeoutError--source--__codelineno-0-318">318</a></span>
+<span class="normal"><a href="#dolphin_desktop._qt_inject.QtAgentTimeoutError--source--__codelineno-0-319">319</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="dolphin_desktop._qt_inject.QtAgentTimeoutError--source--__codelineno-0-313" name="dolphin_desktop._qt_inject.QtAgentTimeoutError--source--__codelineno-0-313"></a><span class="k">class</span><span class="w"> </span><span class="nc">QtAgentTimeoutError</span><span class="p">(</span><span class="n">QtAgentRpcError</span><span class="p">):</span>
+<a id="dolphin_desktop._qt_inject.QtAgentTimeoutError--source--__codelineno-0-314" name="dolphin_desktop._qt_inject.QtAgentTimeoutError--source--__codelineno-0-314"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Raised when a single request outlives ``rpc_timeout``.</span>
+<a id="dolphin_desktop._qt_inject.QtAgentTimeoutError--source--__codelineno-0-315" name="dolphin_desktop._qt_inject.QtAgentTimeoutError--source--__codelineno-0-315"></a>
+<a id="dolphin_desktop._qt_inject.QtAgentTimeoutError--source--__codelineno-0-316" name="dolphin_desktop._qt_inject.QtAgentTimeoutError--source--__codelineno-0-316"></a><span class="sd">    Recoverable, unlike its base: the connection stays usable and the late</span>
+<a id="dolphin_desktop._qt_inject.QtAgentTimeoutError--source--__codelineno-0-317" name="dolphin_desktop._qt_inject.QtAgentTimeoutError--source--__codelineno-0-317"></a><span class="sd">    reply to the abandoned request is discarded when it arrives. A Qt event</span>
+<a id="dolphin_desktop._qt_inject.QtAgentTimeoutError--source--__codelineno-0-318" name="dolphin_desktop._qt_inject.QtAgentTimeoutError--source--__codelineno-0-318"></a><span class="sd">    loop parked behind a native modal dialog produces this and nothing else.</span>
+<a id="dolphin_desktop._qt_inject.QtAgentTimeoutError--source--__codelineno-0-319" name="dolphin_desktop._qt_inject.QtAgentTimeoutError--source--__codelineno-0-319"></a><span class="sd">    &quot;&quot;&quot;</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div><hr />
+<h2 id="catching-exceptions">Catching exceptions<a class="headerlink" href="#catching-exceptions" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">dolphin_desktop</span><span class="w"> </span><span class="kn">import</span> <span class="n">DolphinError</span><span class="p">,</span> <span class="n">ElementNotFoundError</span><span class="p">,</span> <span class="n">WaitTimeoutError</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># Catch any Dolphin error</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="n">win</span><span class="o">.</span><span class="n">get_by_title</span><span class="p">(</span><span class="s2">&quot;Submit&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="k">except</span> <span class="n">DolphinError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dolphin error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1"># Catch element not found specifically</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="n">win</span><span class="o">.</span><span class="n">get_by_automation_id</span><span class="p">(</span><span class="s2">&quot;btnSubmit&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">timeout</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="k">except</span> <span class="n">ElementNotFoundError</span><span class="p">:</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    <span class="c1"># Fall back to image matching</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    <span class="kn">from</span><span class="w"> </span><span class="nn">dolphin_desktop</span><span class="w"> </span><span class="kn">import</span> <span class="n">ImageLocator</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    <span class="n">ImageLocator</span><span class="p">(</span><span class="s2">&quot;templates/submit.png&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="c1"># Catch wait timeout</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    <span class="n">win</span><span class="o">.</span><span class="n">get_by_title</span><span class="p">(</span><span class="s2">&quot;Loading...&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">wait_until_hidden</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="k">except</span> <span class="n">WaitTimeoutError</span><span class="p">:</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>    <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s2">&quot;Loading never finished&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p><code>UnsupportedPatternError</code> is what the programmatic action family raises
+instead of silently falling back to a physical click, so it is the signal
+to switch to input simulation:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">dolphin_desktop</span><span class="w"> </span><span class="kn">import</span> <span class="n">UnsupportedPatternError</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="n">row</span><span class="o">.</span><span class="n">expand</span><span class="p">()</span>                 <span class="c1"># ExpandCollapse pattern</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">except</span> <span class="n">UnsupportedPatternError</span><span class="p">:</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="n">row</span><span class="o">.</span><span class="n">double_click</span><span class="p">()</span>           <span class="c1"># the control does not implement it</span>
+</code></pre></div>
+<h2 id="object-repository-validation">Object Repository validation<a class="headerlink" href="#object-repository-validation" title="Permanent link">&para;</a></h2>
+<p><code>objects.load()</code> and <code>objects.discover()</code> raise the built-in <code>ValueError</code> for
+repository schema errors. This includes a missing <code>selector</code>, an unknown
+alias-entry field, an unknown selector key, and duplicate keys in any YAML
+mapping. The message includes the absolute source file and the YAML path.</p>
+<p>Malformed YAML is also exposed as <code>ValueError</code>; its message includes the
+one-based line and column, and <code>error.__cause__</code> is the original PyYAML
+<code>YAMLError</code>. Loading is atomic: a failed file does not add aliases or a watch
+entry. In watch mode, a failed reload leaves the previous level unchanged.</p>
+<p>This validation error is intentionally not a <code>DolphinError</code>. <code>AliasNotFoundError</code>
+is reserved for resolving an alias that is absent after successful loading.</p>
+<h2 id="exception-hierarchy">Exception hierarchy<a class="headerlink" href="#exception-hierarchy" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>DolphinError
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>|-- ElementNotFoundError
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>|-- AmbiguousMatchError
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>|-- WaitTimeoutError
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>|-- ApplicationError
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>|-- WindowNotFoundError
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>|-- AliasNotFoundError
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>|-- UnsupportedPatternError
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>|-- UnsupportedCapabilityError
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>|-- DelphiError            (Delphi / VCL)
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>|-- MainframeError         (3270 / 5250)
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>|-- OracleFormsError       (Oracle Forms)
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>|-- CDPStalePageError      (Electron / CEF)
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>|-- QtAgentInjectError     (Qt agent — injection refused or failed)
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>`-- QtAgentRpcError        (Qt agent — protocol / transport failure)
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>    `-- QtAgentTimeoutError    (recoverable — the connection stays usable)
+</code></pre></div>
+<p>The two Qt agent errors also inherit from <code>RuntimeError</code>, which they raised
+exclusively before 0.2.0, so code that already catches <code>RuntimeError</code> keeps
+working.</p>
+<p><code>QtAgentTimeoutError</code> is the one Qt agent failure that is <strong>not</strong> terminal:
+the request is abandoned but the connection remains usable, so a wedged Qt
+event loop (a native modal dialog, say) does not cost you the agent.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">dolphin_desktop</span><span class="w"> </span><span class="kn">import</span> <span class="n">QtAgentTimeoutError</span><span class="p">,</span> <span class="n">QtAgentRpcError</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="n">value</span> <span class="o">=</span> <span class="n">widget</span><span class="o">.</span><span class="n">get_property</span><span class="p">(</span><span class="s2">&quot;text&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="k">except</span> <span class="n">QtAgentTimeoutError</span><span class="p">:</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="n">value</span> <span class="o">=</span> <span class="n">widget</span><span class="o">.</span><span class="n">get_property</span><span class="p">(</span><span class="s2">&quot;text&quot;</span><span class="p">)</span>   <span class="c1"># the app was just busy; retry</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="k">except</span> <span class="n">QtAgentRpcError</span><span class="p">:</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    <span class="n">agent</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">qt_agent</span>                  <span class="c1"># genuine desync — rebuilt on access</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 DolphinSoft Kamil Gluszek
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://dolphinsoft.pl" target="_blank" rel="noopener" title="DolphinSoft" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/DolphinSoftEU/DolphinDesktop" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.share", "content.code.annotate", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
